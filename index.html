@@ -17,6 +17,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% de la altura de la ventana */
+            justify-content: space-between; /* Coloca el contenido en el centro verticalmente */
         }
         header {
             background-color: #333;
@@ -41,7 +43,6 @@
             color: #ffa500; /* Cambia el color al pasar el ratón por encima */
         }
         section {
-            display: none; /* Oculta todas las secciones por defecto */
             padding: 20px;
             width: 100%;
             max-width: 800px; /* Ajustar el ancho máximo según sea necesario */
@@ -64,8 +65,6 @@
             text-align: center;
             padding: 10px;
             width: 100%;
-            position: fixed;
-            bottom: 0;
         }
         form {
             display: flex;
@@ -92,6 +91,28 @@
         }
         input[type="submit"]:hover {
             background-color: #444;
+        }
+
+        /* Estilos adicionales para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            nav {
+                padding: 5px;
+            }
+            nav a {
+                margin: 0 5px;
+            }
+            section {
+                padding: 10px;
+            }
+            iframe {
+                height: 200px;
+            }
+            footer {
+                padding: 5px;
+            }
         }
     </style>
 </head>
@@ -148,3 +169,5 @@
     </script>
 </body>
 </html>
+
+
