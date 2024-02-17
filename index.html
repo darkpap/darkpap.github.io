@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rx el Artista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://th.bing.com/th/id/OIG3.faEMUdvq4h_Brtuqcq4B?pid=ImgGn'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffa500; /* Cambia el color al pasar el ratón por encima */
+        }
+        section {
+            display: none; /* Oculta todas las secciones por defecto */
+            padding: 20px;
+            width: 100%;
+            max-width: 800px; /* Ajustar el ancho máximo según sea necesario */
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para las secciones */
+            margin-bottom: 20px; /* Espacio entre las secciones */
+            border-radius: 10px; /* Bordes redondeados para las secciones */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para las secciones */
+        }
+        h2 {
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rx el Artista</h1>
+        <p>Bienvenido a la página oficial de Rx el Artista. Aquí podrás conocer más sobre su música y su carrera.</p>
+    </header>
+    <nav>
+        <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+        <a href="#" onclick="mostrarSeccion('musica')">Música</a>
+        <a href="#" onclick="mostrarSeccion('videos')">Videos</a>
+        <a href="#" onclick="mostrarSeccion('merchandising')">Merchandising</a>
+        <a href="#" onclick="mostrarSeccion('bio')">Bio</a>
+    </nav>
+    <section id="inicio">
+        <h2>Suscríbete para recibir las últimas noticias y novedades sobre Rx</h2>
+        <form action="#">
+            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+            <input type="submit" value="Suscribirse">
+        </form>
+    </section>
+    <section id="musica">
+        <h2>Música</h2>
+        <iframe src="https://open.spotify.com/embed/playlist/1RSEV60mBOc0ftGFgKj7PD" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </section>
+    <section id="videos">
+        <h2>Videos</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLxHhIYchuWhl2UtXfawMU-h3igT5sa8DR" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </section>
+    <section id="merchandising">
+        <h2>Merchandising</h2>
+        <p>Próximamente...</p>
+    </section>
+    <section id="bio">
+        <h2>Bio</h2>
+        <p>Rafael Castillo, también conocido como Rx el Artista, es un talentoso artista del género urbano con una carrera en ascenso. Nacido en [Santo Domingo República Dominicana ] el [14/07/2000], Rx ha cautivado a sus seguidores con su estilo único y su pasión por la música desde una edad temprana. Su amor por el trap y el reguetón se refleja en cada una de sus canciones, que combinan letras profundas con ritmos contagiosos. Rx ha lanzado varios sencillos y colaboraciones que han alcanzado 10 mil reproducciones en plataformas de streaming como Spotify, elevando su reputación como una de las voces más prometedoras del género. Con una base de seguidores en constante crecimiento, Rx continúa trabajando en nuevos proyectos y colaboraciones que prometen llevar su música a un público aún más amplio. Sigue a Rx en sus redes sociales para estar al tanto de sus últimas noticias y lanzamientos.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Rx el Artista. Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function mostrarSeccion(id) {
+            // Oculta todas las secciones por defecto
+            var secciones = document.querySelectorAll('section');
+            secciones.forEach(function(seccion) {
+                seccion.style.display = 'none';
+            });
+            // Muestra la sección con el ID especificado
+            var seccionAMostrar = document.getElementById(id);
+            seccionAMostrar.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
